@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Title of the document</title>
+   <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="discover.html">Discover UMD</a></li>
+            <li><a href="resume.html" class="active">Resume</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="game.html">Game</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Hobbies</h1>
+
+        <div class="hobbies-grid">
+            <div class="card">
+                <h2><i class="fas fa-users"></i> Friends & Family</h2>
+                <div class="hobby-images">
+                    <img src="images/Girls Golf Cart Pic.jpeg" alt="Some of my friends and I at golf practice." class="hobby-image">
+                    <img src="images/Family Grad Pic.jpeg" alt="My family " class="hobby-image">
+                </div>
+                <p>I love to spend time with my friends. We play games together, watch shows, cook, and so much more. Since moving to Duluth away from all of my family they have become very important to me and I now consider them family. My family is relatively small and very close. Pretty much all of them live in the same neighborhood as me so I see them all very often when I am home.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-golf-ball"></i> Golfing</h2>
+                <div class="hobby-images">
+                    <img src="images/Girls Golf Pic.jpeg" alt="My high school golf team" class="hobby-image">
+                    <img src="images/Grandma Golf Pic.jpeg" alt="Golfing with my grandma" class="hobby-image">
+                </div>
+                <p>I was on the golf team throughout high school and have continued to golf recreationally since I graduated. I love how individual the sport is and also how it is something I can enjoy with loved ones while also being outside. I like to golf with my former teammates and my family, especially my grandma.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-hiking"></i> Hiking</h2>
+                <div class="hobby-images">
+                    <img src="images/Climbing Alaska Pic.JPG" alt="Hiking in Alaska" class="hobby-image">
+                    <img src="images/Ely's Peak Fam Pic.jpeg" alt="Family Hike at Ely's Peak" class="hobby-image">
+                </div>
+                <p>I so enjoy hiking because it is a way to appreciate nature while also getting active. I love to hike with my friends and family and also alone. It is very peaceful because of the slower pace and is a great time to do some thinking. Duluth is a great area for hikers and I feel very fortunate to be able to do some of the best hikes in Minnesota.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-plane"></i> Traveling</h2>
+                <div class="hobby-images">
+                    <img src="images/Alaska Mountains Pic.JPG" alt="Alaska Mountains" class="hobby-image">
+                    <img src="images/Frolanders Pic.jpeg" alt="Me and some of my family at Lake of the Woods" class="hobby-image">
+                </div>
+                <p>Seeing new places has always been one of my favorite things to do. I love to explore and see how other areas differ from my normal. It is so exciting for me to get out of my element and gain new experiences.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <div class="image-modal-content">
+            <img id="modalImage" src="" alt="">
+            <div id="modalCaption" class="image-modal-caption"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Autumn Larson. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the modal elements
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        const closeBtn = document.getElementsByClassName('close-modal')[0];
+
+        // Get all hobby images and add click event listeners
+        const hobbyImages = document.querySelectorAll('.hobby-image');
+        
+        hobbyImages.forEach(function(img) {
+            img.addEventListener('click', function() {
+                modal.style.display = 'block';
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+                modalCaption.textContent = this.alt;
+            });
+        });
+
+        // Close modal when clicking the close button
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

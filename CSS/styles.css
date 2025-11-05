@@ -1,0 +1,562 @@
+/* style.css */
+
+
+/* ===== VARIABLES ===== */
+:root {
+   --primary-color: #5b7163;    /* UMD Maroon */
+   --secondary-color: #5b677a;  /* UMD Gold */
+   --text-color: #37352e;
+   --background-color: #e2dbce;
+   --gray: #f4f4f4;
+}
+
+
+/* ===== RESET & BASE STYLES ===== */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   line-height: 1.6;
+   color: var(--text-color);
+   background-color: var(--background-color);
+}
+
+
+/* ===== NAVIGATION ===== */
+nav {
+   background-color: var(--primary-color);
+   padding: 1rem;
+}
+
+
+nav ul {
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   gap: 2rem;
+}
+
+
+nav a {
+   color: white;
+   text-decoration: none;
+   padding: 0.5rem 1rem;
+   border-radius: 5px;
+   transition: background-color 0.3s;
+}
+
+
+nav a:hover {
+   background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ===== MAIN CONTENT ===== */
+main {
+   max-width: 1200px;
+   margin: 2rem auto;
+   padding: 0 2rem;
+}
+
+
+h1 {
+   color: var(--primary-color);
+   margin-bottom: 1rem;
+   font-size: 2.5rem;
+}
+
+/* Home page title refinement */
+.page-title {
+   text-align: center;
+   font-weight: 600;
+   letter-spacing: 0.3px;
+   margin-top: 1rem;
+   margin-bottom: 1.25rem;
+}
+
+/* ===== WELCOME VIDEO ===== */
+.welcome-video-box {
+   background-color: rgb(237, 234, 227);
+   border-radius: 12px;
+   padding: 1rem;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   margin: 1.5rem auto 2rem auto;
+   max-width: 800px;
+}
+
+.welcome-video {
+   width: 100%;
+   height: auto;
+   border-radius: 8px;
+   display: block;
+}
+
+
+h2 {
+   color: var(--primary-color);
+   margin: 2rem 0 1rem 0;
+}
+
+
+section {
+   margin-bottom: 3rem;
+}
+
+
+img {
+   max-width: 100%;
+   height: auto;
+   border-radius: 8px;
+}
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Mobile phones */
+@media screen and (max-width: 768px) {
+   nav ul {
+       flex-direction: column;
+       gap: 0.5rem;
+   }
+
+   main {
+       padding: 0 1rem;
+   }
+
+   h1 {
+       font-size: 2rem;
+   }
+
+   .hobbies-grid {
+       grid-template-columns: 1fr;
+       grid-template-rows: auto;
+   }
+
+   .hobby-images {
+       flex-direction: column;
+       align-items: center;
+   }
+
+   .hobby-image {
+       width: 200px;
+       height: 150px;
+   }
+
+   .professional-box {
+       flex-direction: column;
+       text-align: center;
+       padding: 1.5rem;
+   }
+
+   .professional-image {
+       width: 150px;
+       height: 225px;
+   }
+}
+
+
+/* Tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+   nav ul {
+       gap: 1rem;
+   }
+}
+
+
+/* === Video Container === */
+.video-container {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-video {
+    max-width: 100%;
+    width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.video-credit {
+    text-align: center;
+    font-style: italic;
+    color: var(--text-color);
+    margin-top: 1rem;
+}
+
+/* === Resume Styles === */
+.download-card {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.download-button, .view-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin: 0 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover, .view-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.education-item, .job-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.education-item:last-child, .job-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.company, .date {
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+.skills-list, .achievements-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li, .achievements-list li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skills-list i, .achievements-list i {
+    color: var(--secondary-color);
+    width: 20px;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* === Career Page Styles === */
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.company-logo {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.company-header h2 {
+    margin: 0;
+    color: var(--primary-color);
+    flex: 1;
+}
+.company-info {
+    background-color: rgba(122, 0, 25, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.company-info p {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.company-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.company-link:hover {
+    color: var(--secondary-color);
+}
+
+.separator {
+    margin: 0 1rem;
+    color: var(--border-color);
+}
+
+.company-description h3 {
+    color: var(--primary-color);
+    margin: 1.5rem 0 1rem 0;
+}
+
+.company-description ul {
+    list-style: none;
+    padding: 0;
+}
+
+.company-description ul li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.company-description ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* === Cards === */
+.hobbies-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+   gap: 2rem;
+   margin: 2rem 0;
+}
+
+.card {
+    background: rgb(237, 234, 227);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}.card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+   color: var(--primary-color);
+   margin-bottom: 1rem;
+   font-size: 1.5rem;
+   text-align: center;
+}
+
+.card p {
+   margin-top: 1rem;
+   line-height: 1.6;
+   color: var(--text-color);
+}
+
+.hobby-images {
+   display: flex;
+   gap: 1rem;
+   margin-bottom: 1rem;
+   justify-content: center;
+}
+
+.hobby-image {
+   width: 150px;
+   height: 150px;
+   object-fit: cover;
+   border-radius: 8px;
+   border: 2px solid var(--primary-color);
+   cursor: pointer;
+   transition: transform 0.2s ease;
+}
+
+.hobby-image:hover {
+   transform: scale(1.05);
+}
+
+/* ===== IMAGE MODAL ===== */
+.image-modal {
+   display: none;
+   position: fixed;
+   z-index: 1000;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.9);
+   cursor: pointer;
+}
+
+.image-modal-content {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   max-width: 90%;
+   max-height: 80%;
+   text-align: center;
+}
+
+.image-modal-content img {
+   max-width: 100%;
+   max-height: 70vh;
+   border-radius: 8px;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.image-modal-caption {
+   color: white;
+   font-size: 1.2rem;
+   margin-top: 1rem;
+   padding: 0 1rem;
+   text-align: center;
+}
+
+.close-modal {
+   position: absolute;
+   top: 20px;
+   right: 35px;
+   color: #f1f1f1;
+   font-size: 40px;
+   font-weight: bold;
+   cursor: pointer;
+   z-index: 1001;
+}
+
+.close-modal:hover {
+   color: #bbb;
+}
+
+/* ===== PROFESSIONAL BOX ===== */
+.professional-box {
+   background-color: rgb(237, 234, 227);
+   border-radius: 12px;
+   padding: 2rem;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   margin: 2rem auto;
+   max-width: 800px;
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+}
+
+.professional-image {
+   flex-shrink: 0;
+   width: 200px;
+   height: 300px;
+   border-radius: 8px;
+   object-fit: cover;
+}
+
+.professional-text {
+   flex: 1;
+   line-height: 1.6;
+   color: var(--text-color);
+}
+
+/* ===== TWO-PHOTO BOX ===== */
+.photo-pair-box {
+   background-color: rgb(237, 234, 227);
+   border-radius: 12px;
+   padding: 2rem;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   margin: 2rem auto;
+   max-width: 800px;
+}
+
+.photo-pair-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 1.5rem;
+   align-items: center;
+}
+
+.photo-pair-image {
+   width: 100%;
+   height: 300px;
+   object-fit: cover;
+   border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+   .photo-pair-grid {
+       grid-template-columns: 1fr;
+   }
+
+   .photo-pair-image {
+       height: 225px;
+   }
+}
+
+/* ===== SINGLE-PHOTO BOXES ===== */
+.photo-single-box {
+   background-color: rgb(237, 234, 227);
+   border-radius: 12px;
+   padding: 2rem;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   margin: 2rem auto;
+   max-width: 800px;
+}
+
+.photo-single-content {
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+}
+
+.photo-single-text {
+   flex: 1;
+   line-height: 1.6;
+   color: var(--text-color);
+}
+
+.photo-single-image {
+   flex-shrink: 0;
+   width: 300px;
+   height: 300px;
+   object-fit: cover;
+   border-radius: 8px;
+}
+
+/* Reverse layout for alternating rows */
+.photo-single-content.reverse {
+   flex-direction: row-reverse;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+   .photo-single-content,
+   .photo-single-content.reverse {
+       flex-direction: column;
+       text-align: center;
+   }
+
+   .photo-single-image {
+       width: 100%;
+       height: 225px;
+   }
+}
+
+/* ===== FOOTER ===== */
+footer {
+   background-color: var(--gray);
+   text-align: center;
+   padding: 2rem;
+   margin-top: 4rem;
+}

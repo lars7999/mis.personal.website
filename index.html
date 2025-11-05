@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Title of the document</title>
+   <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+   <nav>
+       <ul>
+           <li><a href="index.html">Home</a></li>
+           <li><a href="hobbies.html">Hobbies</a></li>
+           <li><a href="discover.html">Discover UMD</a></li>
+           <li><a href="resume.html">Resume</a></li>
+           <li><a href="career.html">Career</a></li>
+           <li><a href="game.html">Game</a></li>
+       </ul>
+   </nav>
+   
+<section>
+    <h1 class="page-title">Welcome to My Website</h1>
+</section>
+
+<div class="welcome-video-box">
+   <!-- Replace src with your video file in videos/ -->
+   <video class="welcome-video" controls poster="videos/Welcome Video.mp4">
+       <source src="videos/Welcome Video.mp4" type="video/mp4">
+   </video>
+</div>
+
+<div class="professional-box">
+    <img src="images/Professional Pic.JPG" alt="Picture of me" class="professional-image">
+    <div class="professional-text">
+        <p>Welcome! My name is Autumn Larson, and I’m from Hawley, Minnesota. I’m currently a sophomore at the University of Minnesota Duluth, where I’m majoring in Financial Planning. I chose this field because I’m passionate about helping people make informed financial decisions and plan for their futures with confidence.
+
+            Outside of academics, I enjoy spending time with my friends and family and finding ways to stay active - preferably outdoors.
+            
+            This website is a place for me to share more about my background, education, and career goals as I continue to grow both personally and professionally. Thank you for visiting!
+            </p>
+    </div>
+</div>
+<!-- Single photo boxes -->
+<div class="photo-single-box">
+   <div class="photo-single-content">
+       <div class="photo-single-text">
+           <h2>Staying Active</h2>
+           <p>I love to keep moving and go on new adventures. Hiking allows me to do this while also enjoying the beauty of nature. I love living in Duluth becaue of the access to so many great hiking trails.</p>
+       </div>
+       <img src="images/Trees Pic.jpeg" alt="Pine Trees on Lake Superior" class="photo-single-image photo-pair-image">
+   </div>
+   </div>
+
+<div class="photo-single-box">
+   <div class="photo-single-content">
+       <img src="images/Bayfield Gang Pic.jpeg" alt="My Friends and I in Bayfield, WI" class="photo-single-image photo-pair-image">
+       <div class="photo-single-text">
+           <h2>Spending Time With Loved Ones</h2>
+           <p>I am very much a people person and love to spend time with my friends and family. It is very rare to see me without someone next to me. I charish the time I get to spend with them and love to make new memories with them.</p>
+       </div>
+   </div>
+</div>
+<!-- Image Modal (same structure as hobbies page) -->
+<div id="imageModal" class="image-modal">
+   <span class="close-modal">&times;</span>
+   <div class="image-modal-content">
+       <img id="modalImage" src="" alt="">
+       <div id="modalCaption" class="image-modal-caption"></div>
+   </div>
+   </div>
+<script>
+   // Modal elements
+   const modal = document.getElementById('imageModal');
+   const modalImg = document.getElementById('modalImage');
+   const modalCaption = document.getElementById('modalCaption');
+   const closeBtn = document.getElementsByClassName('close-modal')[0];
+
+   // Bind clicks for two-photo box images
+   const pairImages = document.querySelectorAll('.photo-pair-image');
+   pairImages.forEach(function(img) {
+       img.addEventListener('click', function() {
+           modal.style.display = 'block';
+           modalImg.src = this.src;
+           modalImg.alt = this.alt;
+           modalCaption.textContent = this.alt;
+       });
+   });
+
+   // Close modal
+   closeBtn.addEventListener('click', function() {
+       modal.style.display = 'none';
+   });
+
+   modal.addEventListener('click', function(e) {
+       if (e.target === modal) {
+           modal.style.display = 'none';
+       }
+   });
+
+   document.addEventListener('keydown', function(e) {
+       if (e.key === 'Escape' && modal.style.display === 'block') {
+           modal.style.display = 'none';
+       }
+   });
+</script>
+</body>
+</html>

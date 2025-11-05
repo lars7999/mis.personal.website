@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Autumn Larson</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="discover.html">Discover UMD</a></li>
+            <li><a href="resume.html" class="active">Resume</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="game.html">Game</a></li>
+        </ul>
+    </nav>
+
+<main>
+    <h1>Discover UMD & Duluth</h1>
+
+    <div class="card">
+        <h2><i class="fas fa-university"></i> Why I Chose UMD</h2>
+        <p>I chose to attend UMD because of the Duluth area. It is about a 4 hour car drive from my home of Hawley, so it is far enough away to have a fresh start but also close enough so I can still visit my family every so often. I was really drawn to Duluth because of the nature-centered atmosphere. There are so many outdoor activities to do here and it is hard to get bored. There really is something for everyone here from downhill skiing to rock climbing or even mountain biking. Along with all that Duluth itself has to offer, UMD is a great school. The campus size was exactly what I was looking for at about 8-9,000 students. The campus is walkable and connected buildings means no walking outside from class to class, which with Minnesota winters is a huge bonus.</p>
+    </div>
+
+    <div class="card">
+        <h2><i class="fas fa-video"></i> Experience UMD</h2>
+        <div class="video-container">
+            <video controls class="centered-video">
+                <source src="videos/MISDiscoverVideo2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <p class="video-credit">Created by: Autumn Larson, Connor Pederson, Jacob Weierke, and Joel Sindelar</p>
+    </div>
+</div>
+<!-- Single photo boxes -->
+<div class="photo-single-box">
+   <div class="photo-single-content">
+       <div class="photo-single-text">
+           <h2>Canal Park</h2>
+           <p>One of my favorite places in Duluth is Canal Park. There are so many options of things to do there. You can grab icecream, shop, or even just walk around. My friends and I love to go to the beach and walk to the lighthouse especially. This photo was taken from the lighthouse walk. Seeing the lift bridge go up and down is a very cool thing to see.</p>
+       </div>
+       <img src="images/Lift Bridge Boat Pic.jpeg" alt="Boat going under the lift bridge" class="photo-single-image photo-pair-image">
+   </div>
+   </div>
+<div class="photo-single-box">
+   <div class="photo-single-content">
+       <img src="images/Spirit Mountain Pic.jpeg" alt="Lookout from the top of Spirit Mountain" class="photo-single-image photo-pair-image">
+       <div class="photo-single-text">
+           <h2>Areas Closeby</h2>
+           <p>As much as I love Duluth, The location provides so many opportunities just outside of the city. Spirit Mountian is only a 25 minute drive from campus, and one of my favorite spots to visit in the winter. Duluth's location makes for easy day trips up the north shore. Lutsen and Grand Marias is just a quick drive away.</p>
+       </div>
+   </div>
+</div>
+<div class="photo-single-box">
+   <div class="photo-single-content">
+       <div class="photo-single-text">
+           <h2>UMD Campus</h2>
+           <p>The campus of UMD is at the heart of Duluth. Campus offers so many amazing features. Being at the top of the hill makes for great veiws of Lake Superior. The picture shown is one I took on a night walk with my roomate freshman year when the northern lights were visible. That is one memory I will never forget.</p>
+       </div>
+       <img src="images/LSH Northern Lights Pic.jpeg" alt="Lake Superior Hall with the northern lights" class="photo-single-image photo-pair-image">
+   </div>
+   </div>
+
+<!-- Image Modal (same structure as hobbies page) -->
+<div id="imageModal" class="image-modal">
+   <span class="close-modal">&times;</span>
+   <div class="image-modal-content">
+       <img id="modalImage" src="" alt="">
+       <div id="modalCaption" class="image-modal-caption"></div>
+   </div>
+   </div>
+<script>
+   // Modal elements
+   const modal = document.getElementById('imageModal');
+   const modalImg = document.getElementById('modalImage');
+   const modalCaption = document.getElementById('modalCaption');
+   const closeBtn = document.getElementsByClassName('close-modal')[0];
+
+   // Bind clicks for two-photo box images
+   const pairImages = document.querySelectorAll('.photo-pair-image');
+   pairImages.forEach(function(img) {
+       img.addEventListener('click', function() {
+           modal.style.display = 'block';
+           modalImg.src = this.src;
+           modalImg.alt = this.alt;
+           modalCaption.textContent = this.alt;
+       });
+   });
+
+   // Close modal
+   closeBtn.addEventListener('click', function() {
+       modal.style.display = 'none';
+   });
+
+   modal.addEventListener('click', function(e) {
+       if (e.target === modal) {
+           modal.style.display = 'none';
+       }
+   });
+
+   document.addEventListener('keydown', function(e) {
+       if (e.key === 'Escape' && modal.style.display === 'block') {
+           modal.style.display = 'none';
+       }
+   });
+</script>
+</body>
+</html>
